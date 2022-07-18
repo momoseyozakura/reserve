@@ -45,7 +45,7 @@
 }
 .header-right{
   float:right;
-  margin-top: 20px;
+  margin-top: 10px;
   list-style:none;
 }
 .header-right li{
@@ -63,7 +63,7 @@
 }
 
 .login-container{
-  height:500px;
+  height:650px;
 }
 
 .form{
@@ -94,3 +94,13 @@
   border:solid 1px lightgrey;
 }
 
+.email{
+  color:aliceblue;
+  margin-top: 10px;
+}
+
+.icon-image{
+  height:50px;
+  width:50px;
+  border-radius:50%;
+}
