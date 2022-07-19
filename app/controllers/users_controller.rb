@@ -21,4 +21,8 @@ class UsersController < ApplicationController
       render :profile
     end
   end
+
+  def account
+    @user = User.find_by(id: params[:id])
+  end
 end

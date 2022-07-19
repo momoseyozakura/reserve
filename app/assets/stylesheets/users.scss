@@ -56,20 +56,50 @@
   
   
 }
-.profile-link{
+.active-link{
   color:deepskyblue;
   
 }
-.account-link{
+.another-link{
   text-decoration: none;
   color:black;
   
 }
-.account-link:hover{
+.another-link:hover{
   color:deepskyblue;
 }
 .user-links{
   padding:30px;
   border-bottom:solid 2px darkgray ;
   margin:0;
+}
+.edit-btn{
+  text-decoration: none;
+  background-color:dodgerblue;
+  border: none;
+  color:white;
+  padding:10px 50px;
+  border-radius: 5px;
+  margin:100px 0;
+}
+.edit-btn-container{
+  border-bottom:solid 1px lightgrey ;
+  margin:0 20px;
+  text-align: left;
+  height:50px;
+  position:relative;
+}
+.btn-box{
+  position:absolute;
+  top: 25%;
+}
+.back-btn{
+  text-decoration: none;
+  border: solid 1px black;
+  color:dodgerblue;
+  padding:10px 250px;
+  border-radius: 5px;
+  margin-left:30px;
+  width:35px;
+  display: block;
 }

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :home
   get 'users/:id/profile' => "users#profile"
   post "users/:id/add" => "users#add"
+  get "users/:id/account" => "users#account"
 
   
   root to: "home#index"
