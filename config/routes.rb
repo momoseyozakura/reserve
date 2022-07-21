@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :home
+  resources :home, :rooms
   get 'users/:id/profile' => "users#profile"
   post "users/:id/add" => "users#add"
   get "users/:id/account" => "users#account"
