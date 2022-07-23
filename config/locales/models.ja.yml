@@ -7,3 +7,9 @@ ja:
         password: パスワード
         password_confirmation: 確認用パスワード
         remember_me: 次回から自動的にログイン
+      room:
+        name: ルーム名
+        memo: ルーム紹介
+        fee: 料金
+        area: 住所
+        image: ルーム画像
