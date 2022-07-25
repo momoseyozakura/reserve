@@ -15,7 +15,7 @@
         <tbody>
             <tr>
                 <td><%= image_tag room.image.to_s ,size: "240x140"%></td>
-                <td><%= room.name %></td>
+                <td><a href = <%= "/rooms/#{room.id}/edit"%>><%= room.name %></a></td>
                 <td><%= room.memo%></td>
                 <td>¥<%= room.fee %></td>
                 <td><%= room.created_at.to_s(:datetime_jp) %></td>

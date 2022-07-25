@@ -13,3 +13,6 @@ ja:
         fee: 料金
         area: 住所
         image: ルーム画像
+        start_date: 開始日
+        end_date: 終了日
+        number: 人数

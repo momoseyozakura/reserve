@@ -49,3 +49,35 @@ td{
   padding:10px;
   border-bottom:1px solid lightgray;
 }
+.user-container{
+  border-bottom:1px solid lightgray;
+  height:50px;
+  display:flex;
+  
+}
+
+.reserve-container{
+  display:flex;
+  height:650px;
+}
+.update{
+  margin:20px;
+}
+.reserve-form{
+  width:100%;
+  border:solid 1px lightgrey;
+  text-align: center;
+  padding:20px 0;
+  margin:20px;
+}
+.left-container{
+  margin:20px;
+}
+.give-user-name{
+  font-size:30px;
+  margin-right:20px;
+}
+.room-area{
+  font-size:30px;
+  margin-left:200px;
+}
