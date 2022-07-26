@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :home, :rooms
+  resources :home
+  resources :rooms ,only: [:index, :new, :create, :edit, :update]
   get 'users/:id/profile' => "users#profile"
   post "users/:id/add" => "users#add"
   get "users/:id/account" => "users#account"
+  get "rooms/reserve" => "rooms#reserve"
 
   
   root to: "home#index"

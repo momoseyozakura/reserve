@@ -25,6 +25,7 @@
  .header-left{
   margin-left:20px;
   float:left;
+  display:flex;
  }
  
  footer{

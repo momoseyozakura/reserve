@@ -1,5 +1,5 @@
 <div class = room-container>
-    <h2>登録済みルーム一覧</h2>
+    <h2>予約済みルーム一覧</h2>
     
     <table >
        <thead>
@@ -7,18 +7,22 @@
             <th>ルーム画像</th>
             <th>ルーム名</th>
             <th>ルーム紹介</th>
-            <th>料金</th>
-            <th>作成日</th>
+            <th>合計料金</th>
+            <th>開始日</th>
+            <th>終了日</th>
+            <th>予約確定日時</th>
         </tr>
        <thead>
-       <% @search_rooms.each do |room| %>
+       <% @rooms.each do |room| %>
         <tbody>
             <tr>
                 <td><%= image_tag room.image.to_s ,size: "240x140"%></td>
                 <td><a href = <%= "/rooms/#{room.id}/edit"%>><%= room.name %></a></td>
                 <td><%= room.memo%></td>
-                <td>¥<%= room.fee %></td>
-                <td><%= room.created_at.to_s(:datetime_jp) %></td>
+                <td>¥<%= room.sum_price.to_i %></td>
+                <td><%= room.start_date%></td>
+                <td><%= room.end_date%></td>
+                <td><%= room.updated_at.to_s(:datetime_jp) %></td>
             </tr>
         </tbody>
         <%end%>

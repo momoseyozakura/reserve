@@ -13,4 +13,8 @@ class Room < ApplicationRecord
   def user
     return User.find_by(id: self.give_id)
   end
+  
+  def sum_price
+    number * fee * (end_date - start_date)
+  end
 end

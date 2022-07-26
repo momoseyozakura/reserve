@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_24_080942) do
+ActiveRecord::Schema.define(version: 2022_07_25_140637) do
 
-# Could not dump table "rooms" because of following StandardError
-#   Unknown type 'dete' for column 'start_date'
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.text "memo"
+    t.integer "fee"
+    t.string "area"
+    t.string "image"
+    t.integer "take_id"
+    t.integer "give_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "number"
+    t.date "start_date"
+    t.date "end_date"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

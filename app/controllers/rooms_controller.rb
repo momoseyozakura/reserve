@@ -30,6 +30,10 @@ class RoomsController < ApplicationController
    end
   end
 
+  def reserve
+    @rooms = Room.where(take_id: current_user.id)
+  end
+  
   private
   def room_params
     params.permit(:name, :memo , :fee , :area , :image,:give_id).merge(give_id: current_user.id)

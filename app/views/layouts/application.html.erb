@@ -14,9 +14,15 @@
     <header>
       <div class = header-container>
         <div class = header-left>
-          <a href = "/">
-            <img class="logo" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png">
-          </a>
+            <a href = "/">
+              <img class="logo" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png">
+            </a>
+            <%= search_form_for @search, url: rooms_path do |f| %>
+              <%= f.text_field :area_cont, placeholder: 'エリア' ,class: "input"%>
+            <% end %>
+            <%= search_form_for @search, url: rooms_path do |f| %>
+              <%= f.text_field :name_or_memo_or_area_cont, placeholder: 'キーワード',class: "input" %>
+            <% end %>
         </div>
         <ul class = "header-right gnav">
           <% if current_user %>
@@ -25,6 +31,9 @@
               <ul class = "ddmenu">
                 <li>
                   <a href = "/rooms/new">ルーム登録</a>
+                </li>
+                <li>
+                  <a href = "/rooms/reserve">予約済みルーム一覧</a>
                 </li>
                 <li>
                   <a href = "/rooms">登録済みルーム一覧</a>
