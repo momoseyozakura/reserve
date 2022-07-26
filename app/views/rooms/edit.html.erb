@@ -1,56 +1,58 @@
-<div class = "reserve-container">
-  <div class = "left-container">
-    <div class = "image-container">
-      <%= image_tag @room.image.to_s ,size: "540x305"%>
-    </div>
-    <div class = "user-container">
-      <div class = "user-icon">
-        <img class = "icon-image" alt = "アイコン" src = "<%= "/user_images/#{@room.user.image}" %>">
+<div class = "container">
+  <div class = "reserve-container">
+    <div class = "left-container">
+      <div class = "image-container">
+        <%= image_tag @room.image.to_s ,size: "540x305"%>
       </div>
-      <div class = "give-user-name">
-        <%= @room.user.name%>
-      </div>
-      <div class = "room-area">
-        <%= @room.area %>
-      </div>
-    </div>
-    <div class = "user-container">
-      <%= @room.memo %>
-    </div>
-  </div>
-  <div class = "right-container">
-    
-      <div class = "reserve-form">
-        <div class = "update-content">
-          <div class = errors>
-            <% @room.errors.full_messages.each do |message|%>
-              <ul><li><%= message%></li></ul>
-            <% end %>
-          </div>  
-          ¥<%= @room.fee%>
+      <div class = "user-container">
+        <div class = "user-icon">
+          <img class = "icon-image" alt = "アイコン" src = "<%= "/user_images/#{@room.user.image}" %>">
         </div>
-        <%= form_tag("/rooms/#{@room.id}",method: :patch) do %>
-
-            <div class = "update-content">
-              <p>開始日<p>
-              <input name = "start_date" type = "date" value = <%= @room.start_date %>>
-            </div>
-
-            <div class = "update-content">
-              <p>終了日</p>
-              <input name = "end_date" type = "date" value = <%= @room.end_date %>>
-            </div>
-
-            <div class = "update-content">
-              <p>人数</p>
-              <input name = "number" type = "number" value = <%= @room.number %>>
-            </div>
-
-            <input  type = "submit" value = "更新" class = "update-btn">
-          <% end %>
-
-
+        <div class = "give-user-name">
+          <%= @room.user.name%>
+        </div>
+        <div class = "room-area">
+          <%= @room.area %>
+        </div>
       </div>
-    
+      <div class = "user-container">
+        <%= @room.memo %>
+      </div>
+    </div>
+    <div class = "right-container">
+      
+        <div class = "reserve-form">
+          <div class = "update-content">
+            <div class = errors>
+              <% @room.errors.full_messages.each do |message|%>
+                <ul><li><%= message%></li></ul>
+              <% end %>
+            </div>  
+            ¥<%= @room.fee%>
+          </div>
+          <%= form_tag("/rooms/#{@room.id}",method: :patch) do %>
+
+              <div class = "update-content">
+                <p>開始日<p>
+                <input name = "start_date" type = "date" value = <%= @room.start_date %>>
+              </div>
+
+              <div class = "update-content">
+                <p>終了日</p>
+                <input name = "end_date" type = "date" value = <%= @room.end_date %>>
+              </div>
+
+              <div class = "update-content">
+                <p>人数</p>
+                <input name = "number" type = "number" value = <%= @room.number %>>
+              </div>
+
+              <input  type = "submit" value = "更新" class = "update-btn">
+            <% end %>
+
+
+        </div>
+      
+    </div>
   </div>
 </div>
