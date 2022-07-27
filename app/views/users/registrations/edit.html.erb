@@ -1,0 +1,40 @@
+<div class = "profile-form">
+  <div class = "update-content">
+    <h2>アカウント編集</h2>
+  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+
+    <div class="update-content">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="update-content">
+      <%= f.label :password %> (変更する場合のみ入力)<br />
+      <%= f.password_field :password, autocomplete: "new-password" , class: "input"%>
+      
+    </div>
+
+    <div class="update-content">
+      <%= f.label :password_confirmation %>(変更する場合のみ入力)<br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
+    </div>
+
+    <div class="update-content">
+      <%= f.label :current_password %><br />
+      <%= f.password_field :current_password, autocomplete: "current-password" , class: "input"%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "更新", class: "update-btn" %>
+    </div>
+  <% end %>
+
+
+  <%= link_to "戻る", :back , class: "back-btn"%>
+</div>

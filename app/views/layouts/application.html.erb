@@ -11,6 +11,73 @@
   </head>
 
   <body>
+    <header>
+      <div class = header-container>
+        <div class = header-left>
+            <a href = "/">
+              <img class="logo" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png">
+            </a>
+            <%= search_form_for @search, url: rooms_path do |f| %>
+              <%= f.text_field :area_cont, placeholder: 'エリア' ,class: "input"%>
+            <% end %>
+            <%= search_form_for @search, url: rooms_path do |f| %>
+              <%= f.text_field :name_or_memo_or_area_cont, placeholder: 'キーワード',class: "input" %>
+            <% end %>
+        </div>
+        <ul class = "header-right gnav">
+          <% if current_user %>
+            <li class = "item">
+              <a class = "user-name menu">メニュー</a>
+              <ul class = "ddmenu">
+                <li>
+                  <a href = "/rooms/new">ルーム登録</a>
+                </li>
+                <li>
+                  <a href = "/rooms/reserve">予約済みルーム一覧</a>
+                </li>
+                <li>
+                  <a href = "/rooms">登録済みルーム一覧</a>
+                </li>
+                <li>
+                  <a href = <%= "/users/#{current_user.id}/account"%>>設定</a>
+                </li>
+                <li>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <% if current_user.image.nil? %>
+                <img class = "icon-image" alt = "デフォルトアイコン" src = "https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg">
+              <% else %>
+                <img class = "icon-image" alt = "アイコン" src = "<%= "/user_images/#{current_user.image}" %>">
+               <% end %>
+            </li>
+            <li class = "user-name">
+              <%= current_user.name%>
+            </li>
+            <% else %>
+              <li>
+                <a href = "/users/sign_up" class = "signup-link">新規登録</a>
+              </li>
+              <li>
+                <a href = "/users/sign_in" class = "login-link">ログイン</a>
+              </li>
+              
+          <% end %>
+        </ul>
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      <div class = footer-container>
+        <div class = footer-right>
+          <a href = "/">
+            <img class="logo" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" alt = "ロゴ画像">
+          </a>
+        </div>
+        <div class = footer-left>
+        </div>
+    </footer>
   </body>
 </html>

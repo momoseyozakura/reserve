@@ -1,0 +1,41 @@
+<div class = "form">
+  <h2>ルーム情報登録</h2>
+  <div class = errors>
+    <% @room.errors.full_messages.each do |message|%>
+      <ul><li><%= message%></li></ul>
+    <% end %>
+</div>
+  <%= form_tag("/rooms", {multipart: true}) do %>
+
+    <div class="field">
+      <p>ルーム名</p>
+      <input type = "text" name = "name" class = "input">
+    </div>
+
+    <div class="field">
+      <p>ルーム紹介</p>
+      <textarea name = "memo"></textarea>
+    </div>
+
+    <div class="field">
+      <p>料金（一日あたり）</p>
+      <input type = "number" step = "1" name = "fee" class = "input">
+    </div>
+
+    <div class="field">
+      <p>住所</p>
+      <input type = "text" name = "area" class = "input">
+    </div>
+
+    <div class="field">
+      <p>ルーム画像</p>
+      <input type = "file" name = "image" class = "input">
+    </div>
+
+    <div class="actions">
+      <input type = "submit" value = "登録" class = "submit-btn">
+    </div>
+  <% end %>
+
+  
+</div>
