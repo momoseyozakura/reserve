@@ -1,0 +1,26 @@
+<div class = "update-content user-links">
+    <a class = "another-link" href = "/users/<%= @user.id %>/profile">プロフィール</a>
+    <a class = "active-link" href = "/users/<%= @user.id %>/account">アカウント</a>
+</div>
+<div class = "profile-form">
+  <div class = "update-content">
+    <h2>アカウント</h2>
+    
+  </div>
+
+    <div class = "update-content">
+      <p>メールアドレス<p>
+      <%= @user.email %>
+    </div>
+
+    <div class = "update-content">
+      <p>パスワード</p>
+      <p>* * * * * * * *</p>
+    </div>
+
+    <div class = "edit-btn-container">
+      <div class = "btn-box">
+        <a class = "edit-btn" href = "/users/edit">編集</a>
+      </div>
+    </div>
+</div>
